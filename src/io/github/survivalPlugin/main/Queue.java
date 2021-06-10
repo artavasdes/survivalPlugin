@@ -11,7 +11,7 @@ import io.github.minigameplugin.main.Start;
 public class Queue implements Listener {
 	//If enough players in queue, run start commandsArrayList<Player> list = new ArrayList<Player>();
 	//If enough players in queue, run start commands
-	
+	//test
 	public void glassCage(Player p) {
 		Location loc = new Location(p.getWorld(), x, y, z); // TODO; insert coords to glass cage
 		list.add(p);
@@ -22,5 +22,6 @@ public class Queue implements Listener {
 		if (list.size() >= 3) { // minimum player limit
 			Start.countdown();
 		}
+		
 	}
 }
