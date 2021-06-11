@@ -9,6 +9,7 @@ public class Win {
     	if (Start.alive.size() == 1) {
 	    	//Prints name of last player alive
     		for (Player p : Bukkit.getOnlinePlayers()) {
+    			p.setGameMode("adventure");
 		    	Reset.returnTp(p);
 		    	Reset.original(p);
     		}

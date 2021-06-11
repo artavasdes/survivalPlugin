@@ -18,6 +18,7 @@ public class Death implements Listener {
             if (e.getDamage() >= p.getHealth()) {
             	Start.alive.remove(p);
             	Win.checkForWin();
+            	p.setGameMode("spectator");
             }
         }
 	}
