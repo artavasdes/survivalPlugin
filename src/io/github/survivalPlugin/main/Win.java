@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class Win {
-
+//test
     public static void checkForWin() {
     	if (Start.alive.size() == 1) {
 	    	//Prints name of last player alive
