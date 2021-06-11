@@ -1,4 +1,4 @@
-package io.github.minigameplugin.main;
+package io.github.survivalPlugin.main;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -55,7 +55,6 @@ public class Main extends JavaPlugin {
 					//start game
 					Start.teleport();
 					Start.countdown();
-					Start.tntDrop();
 					//TODO, add method for starting game
 					return true;
 			}

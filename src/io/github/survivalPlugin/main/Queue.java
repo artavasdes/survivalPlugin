@@ -1,12 +1,14 @@
-package io.github.minigameplugin.main;
+package io.github.survivalPlugin.main;
 
 import java.util.ArrayList;
+//import org.bukkit.*;
 
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import io.github.minigameplugin.main.Location;
-import io.github.minigameplugin.main.Player;
-import io.github.minigameplugin.main.Start;
+
+//import io.github.survivalPlugin.main.Start;
 
 public class Queue implements Listener {
 	//If enough players in queue, run start commandsArrayList<Player> list = new ArrayList<Player>();

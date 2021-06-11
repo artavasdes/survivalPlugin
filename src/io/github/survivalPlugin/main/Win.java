@@ -1,4 +1,4 @@
-package io.github.minigameplugin.main;
+package io.github.survivalPlugin.main;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
