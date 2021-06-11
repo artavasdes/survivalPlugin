@@ -37,6 +37,7 @@ public class Main extends JavaPlugin {
 					player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD+"Resetting Minigame!");	
 					//reset minigame
 					Reset.returnTp();
+					//ChestLoot.add();
 					return true;
 				}
 				player.sendMessage(ChatColor.RED + "You do not have permission to use this command, contact a server mod!");
