@@ -3,7 +3,7 @@ package io.github.minigameplugin.main;
 public class Reset {
 	
 	public static void original() {
-		//reset player hp, removes blocks, etc.
+		player.setHealth(20);
 	}
 	
 	public static void returnTp() {
