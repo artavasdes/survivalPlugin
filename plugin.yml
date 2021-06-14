@@ -1,5 +1,13 @@
-name: MinigamePlugin
+name: SurvivalPlugin
 version: 1.0
-main: io.github.minigameplugin.Main
+main: io.github.survivalPlugin.main.Main
 description: Minigames
 api-version: 1.16
+
+commands:
+
+    reset:
+        usage: /reset
+        
+    start:
+        usage: /start
