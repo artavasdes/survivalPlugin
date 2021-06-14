@@ -24,7 +24,7 @@ public class JoinEvents implements Listener {
 		
 		World world = p.getWorld();
 		
-		Location loc = new Location(world,0,70,0);
+		Location loc = new Location(world,1,124,1);
 		p.teleport(loc);
 		if (Queue.list.contains(p))
 			p.kickPlayer("Player Limit Reached!");
