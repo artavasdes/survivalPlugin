@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 //Creates a moving border with a runnable
-public class Border extends BukkitRunnable {
+public class Border {
 
 	private final JavaPlugin plugin;
     
@@ -28,16 +28,21 @@ public class Border extends BukkitRunnable {
     public int radius = 300;
     //units border goes down by
     public int reducer = 0;
-    @Override
-    public void run() {    
-        if (counter > 0) { 
-        	border.setSize(radius-reducer);
-        	border.setCenter(0,0);
-        	reducer=reducer+2;
-        } else {
-            //set world border
-        	border.setSize(100);
-            this.cancel();
-        }
-    }, 20L);
+    
+    public void shrinkBorder() {
+    	new BukkitRunnable() {
+		    @Override
+		    public void run() {    
+		        if (counter > 0) { 
+		        	border.setSize(radius-reducer);
+		        	border.setCenter(0,0);
+		        	reducer=reducer+2;
+		        } else {
+		            //set world border
+		        	border.setSize(100);
+		            this.cancel();
+		        }
+		    }
+    	}.runTaskTimer(Main.instance, 0L, 20L);
+    }
 }

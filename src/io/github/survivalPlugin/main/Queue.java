@@ -7,13 +7,11 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-
-//import io.github.survivalPlugin.main.Start;
+import test.Start;
 
 public class Queue implements Listener {
-	//If enough players in queue, run start commandsArrayList<Player> list = new ArrayList<Player>();
-	//If enough players in queue, run start commands
-	//test
+	static ArrayList<Player> list = new ArrayList<Player>();
+	
 	public void glassCage(Player p) {
 		Location loc = new Location(p.getWorld(), 40, 70, 0); // TODO; insert coords to glass cage
 		list.add(p);

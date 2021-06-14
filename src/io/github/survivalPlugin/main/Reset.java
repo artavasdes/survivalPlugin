@@ -7,14 +7,17 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.World;
+import org.bukkit.entity.Player;
+
 public class Reset {
 	
-<<<<<<< HEAD
-	public static void original() {
-=======
 	public static void original(Player player) {
 		//reset player hp, removes blocks, etc.
->>>>>>> branch 'master' of https://github.com/artavasdes/survivalPlugin.git
 		player.setHealth(20);
 	}
 	

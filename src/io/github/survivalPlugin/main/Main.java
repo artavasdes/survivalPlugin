@@ -4,13 +4,16 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
+	public static Plugin instance;
 	
 	@Override
 	public void onEnable() {
+		instance = this;
 		//startup
 		//reloads
 		//plugin reloads
@@ -36,7 +39,7 @@ public class Main extends JavaPlugin {
 				if(player.hasPermission("reset.use")) {
 					player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD+"Resetting Minigame!");	
 					//reset minigame
-					Reset.returnTp();
+					Reset.returnTp(player);
 					//ChestLoot.add();
 					return true;
 				}
@@ -54,8 +57,13 @@ public class Main extends JavaPlugin {
 				Player player = (Player) sender;
 					player.sendMessage(ChatColor.DARK_GREEN + "" + ChatColor.BOLD+"Starting Game Soon!");
 					//start game
-					Start.teleport();
-					Start.countdown();
+					Start.teleport(player);
+					try {
+						Start.countdown();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					//TODO, add method for starting game
 					return true;
 			}

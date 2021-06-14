@@ -1,5 +1,4 @@
 package io.github.survivalPlugin.main;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -13,6 +12,13 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.FallingBlock;
 
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.World;
+import org.bukkit.entity.Player;
 
 public class Start {
 	// map boundaries TODO
@@ -21,11 +27,12 @@ public class Start {
 	static int z1 = 0;
 	static int z2 = 0;
 	static int y = 0;
+	static boolean started = false;
+	public static ArrayList<Player> alive = new ArrayList<Player>();
 	
-	public static void teleport() {
+	public static void teleport(Player player) {
 		//Teleports players to set locations
 		ArrayList<Location> locations = new ArrayList<Location>();
-		Player player = player.getPlayer();
 		World world = player.getWorld();
 		Location l = new Location(world,.5,53,-25.5);
 		locations.add(l);
@@ -71,8 +78,7 @@ public class Start {
 		Bukkit.broadcastMessage("1...");
 		TimeUnit.SECONDS.sleep(1);
 		Bukkit.broadcastMessage("Start!");
+		started = true;
 	}
-			
-}
 
 
