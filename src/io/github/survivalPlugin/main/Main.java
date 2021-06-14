@@ -1,4 +1,4 @@
-package io.github.minigameplugin.main;
+package io.github.survivalPlugin.main;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -37,6 +37,7 @@ public class Main extends JavaPlugin {
 					player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD+"Resetting Minigame!");	
 					//reset minigame
 					Reset.returnTp();
+					//ChestLoot.add();
 					return true;
 				}
 				player.sendMessage(ChatColor.RED + "You do not have permission to use this command, contact a server mod!");
@@ -55,7 +56,6 @@ public class Main extends JavaPlugin {
 					//start game
 					Start.teleport();
 					Start.countdown();
-					Start.tntDrop();
 					//TODO, add method for starting game
 					return true;
 			}

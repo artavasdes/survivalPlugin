@@ -9,6 +9,10 @@
 	<classpathentry kind="lib" path="/Users/acesjus/Desktop/privateServer/spigot-1.16.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/varta/Downloads/spigot-1.16.5.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Lisa/Downloads/spigot-1.16.5(1).jar"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/david/Downloads/spigot-1.16.5.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/schoo/Downloads/spigot-1.16.5.jar"/>
+>>>>>>> branch 'master' of https://github.com/artavasdes/survivalPlugin.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,4 +1,4 @@
-package io.github.minigameplugin.main;
+package io.github.survivalPlugin.main;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
