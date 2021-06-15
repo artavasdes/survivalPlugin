@@ -8,6 +8,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import test.Border;
 import test.Main;
+import test.Start;
 
 //Creates a moving border with a runnable
 public class Border {
@@ -36,7 +37,8 @@ public static void shrinkBorder(Border border) {
 		        	radius -= reducer;
 		        	b.setSize(radius);
 		        	b.setCenter(new Location(Bukkit.getWorld("world"), 0, 0, 0));
-		        } else {
+		        } 
+		        if (!Start.started || counter <= 0){
 		            //set world border
 		        	b.setSize(50);
 		            cancel();
@@ -45,7 +47,8 @@ public static void shrinkBorder(Border border) {
 	}.runTaskTimer(Main.instance, 0L, 20L);
 }
 
-public static void borderReset(int radius) {
-	Border.radius = 250;
+public static void borderReset() {
+	  radius = 500;
+	  b.setSize(500);
 }
 }

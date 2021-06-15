@@ -1,9 +1,37 @@
 package io.github.survivalPlugin.main;
 
-(border);
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
+import org.bukkit.Location;
+import org.bukkit.Sound;
+import org.bukkit.World;
+import org.bukkit.entity.Player;
+
+public class Start {
+	// map boundaries TODO
+	static int x1 = 0;
+	static int x2 = 0;
+	static int z1 = 0;
+	static int z2 = 0;
+	static int y = 0;
+	static boolean started = false;
+	public static ArrayList<Player> alive = new ArrayList<Player>();
+	
+	public static void start() {
+		alive.clear();
+		started = true;
+		teleport();
+		Border border = new Border(100, 500, 2);
+		Border.shrinkBorder(border);
 		ChestLoot.add();
 		for (Player p : Bukkit.getOnlinePlayers()) {
 			alive.add(p);
+		}
+		for (Player p : Bukkit.getOnlinePlayers()) {
 			p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1, 10);		
 			GameScoreboard.updateScoreboard(p);
 		}
@@ -46,17 +74,17 @@ package io.github.survivalPlugin.main;
 	}
 	public static void countdown() throws InterruptedException {
 		//5 second countdown until tnt
-		Bukkit.broadcastMessage("Starting in 5...");
+		Bukkit.broadcastMessage(ChatColor.GREEN + "Starting in 5...");
 		TimeUnit.SECONDS.sleep(1);
-		Bukkit.broadcastMessage("4...");
+		Bukkit.broadcastMessage(ChatColor.GREEN + "4...");
 		TimeUnit.SECONDS.sleep(1);
-		Bukkit.broadcastMessage("3...");
+		Bukkit.broadcastMessage(ChatColor.GREEN + "3...");
 		TimeUnit.SECONDS.sleep(1);
-		Bukkit.broadcastMessage("2...");
+		Bukkit.broadcastMessage(ChatColor.GREEN + "2...");
 		TimeUnit.SECONDS.sleep(1);
-		Bukkit.broadcastMessage("1...");
+		Bukkit.broadcastMessage(ChatColor.GREEN + "1...");
 		TimeUnit.SECONDS.sleep(1);
-		Bukkit.broadcastMessage("Start!");
+		Bukkit.broadcastMessage(ChatColor.GREEN + "Start!");
 		start();
 	}
 	
