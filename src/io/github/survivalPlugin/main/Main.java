@@ -40,6 +40,7 @@ public class Main extends JavaPlugin {
 					player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD+"Resetting Minigame!");	
 					//reset minigame
 					Reset.returnTp(player);
+					ChestLoot.reset();
 					//ChestLoot.add();
 					return true;
 				}
@@ -65,6 +66,8 @@ public class Main extends JavaPlugin {
 						e.printStackTrace();
 					}
 					//TODO, add method for starting game
+					ChestLoot.reset();
+					ChestLoot.add();
 					return true;
 			}
 			else {
