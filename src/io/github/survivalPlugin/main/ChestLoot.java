@@ -41,8 +41,13 @@ public class ChestLoot {
                     Chest chest = (Chest) b;
                     Inventory inventory = chest.getBlockInventory();
                     Material[] randomItems = {Material.AIR, Material.APPLE, Material.STICK, 
-                    		Material.STONE_SWORD, Material.WOODEN_SWORD, Material.STONE_AXE, Material.DIAMOND_PICKAXE, 
-                    		Material.ARROW, Material.BOW };
+                    Material.STONE_SWORD, Material.WOODEN_SWORD, Material.STONE_AXE, Material.DIAMOND_PICKAXE, 
+                    Material.ARROW, Material.BOW, Material.COOKED_BEEF,Material.COOKED_MUTTON,Material.CHICKEN, 
+                    Material.DIAMOND_HELMET,Material.CHAINMAIL_LEGGINGS, Material.DIAMOND_SWORD, Material.IRON_SWORD,
+                    Material.IRON_AXE, Material.WOODEN_AXE, Material.CARROT, Material.SHIELD, Material.CROSSBOW, Material.COMPASS,
+                    Material.CHAINMAIL_CHESTPLATE, Material.IRON_BOOTS,Material.DIAMOND_SWORD, Material.LEATHER_CHESTPLATE, Material.BEEF,
+                    Material.GOLDEN_APPLE, Material.GOLDEN_HOE, Material.DIAMOND_HOE, Material.GOLDEN_HOE, Material.BREAD, Material.IRON_CHESTPLATE,
+                    Material.LEATHER_CHESTPLATE};
                    
 
                     for (int i = 0; i < randomItems.length; i++) {
