@@ -26,7 +26,7 @@ public class JoinEvents implements Listener {
 		p.setLevel(0);
 		
 		World world = p.getWorld();
-		Location loc = new Location(world, 0, 107, 0);
+		Location loc = new Location(world,5,124,4);
 		Queue.glassCage(p);
 		p.teleport(loc);
 		
