@@ -48,7 +48,7 @@ public static void shrinkBorder(Border border) {
 }
 
 public static void borderReset() {
-	  radius = 500;
-	  b.setSize(500);
-}
+	  radius = 800;
+	  b.setSize(800);
+	}
 }

@@ -25,7 +25,7 @@ public class Start {
 		alive.clear();
 		started = true;
 		teleport();
-		Border border = new Border(100, 500, 2);
+		Border border = new Border(100, 800, 2);
 		Border.shrinkBorder(border);
 		ChestLoot.add();
 		for (Player p : Bukkit.getOnlinePlayers()) {
