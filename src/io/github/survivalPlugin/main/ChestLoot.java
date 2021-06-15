@@ -48,17 +48,14 @@ public class ChestLoot {
                     Material.CHAINMAIL_CHESTPLATE, Material.IRON_BOOTS,Material.DIAMOND_SWORD, Material.LEATHER_CHESTPLATE, Material.BEEF,
                     Material.GOLDEN_APPLE, Material.GOLDEN_HOE, Material.DIAMOND_HOE, Material.GOLDEN_HOE, Material.BREAD, Material.IRON_CHESTPLATE,
                     Material.LEATHER_CHESTPLATE};
-                   
 
-                    for (int i = 0; i < randomItems.length; i++) {
-                        Random rand = new Random();
-                        //int intRandom1 = rand.nextInt(35) + 9;
-                        //int intItens = rand.nextInt(randomItens.length);
-
-                        int max = 9;
-                        for (int amount = 0; amount < max; amount++) {
-                            inventory.addItem(new ItemStack(randomItems[rand.nextInt(randomItems.length)]));
-                        }
+                    Random rand = new Random();
+                    //int intRandom1 = rand.nextInt(35) + 9;
+                    //int intItens = rand.nextInt(randomItens.length);
+                    
+                    for (int i = 0; i < chest.getInventory().getSize(); i++) {
+                    	if (rand.nextInt(100) <= 20)
+                    		inventory.setItem(1, new ItemStack(randomItems[rand.nextInt(randomItems.length)]));
                     }
                 }
             }
