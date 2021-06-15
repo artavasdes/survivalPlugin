@@ -4,11 +4,20 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 
 import org.bukkit.entity.Player;
 
+import test.Border;
+import test.ChestLoot;
+import test.GameScoreboard;
+import test.Reset;
+import test.Start;
+
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.entity.FallingBlock;
 
@@ -30,10 +39,18 @@ public class Start {
 	static boolean started = false;
 	public static ArrayList<Player> alive = new ArrayList<Player>();
 	
-	public void start() {
+	public static void start() {
+		alive.clear();
+		started = true;
 		teleport();
-		Border border = new Border(100);
+		Border border = new Border(100, 300, 2);
 		Border.shrinkBorder(border);
+		ChestLoot.add();
+		for (Player p : Bukkit.getOnlinePlayers()) {
+			alive.add(p);
+			p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1, 10);		
+			GameScoreboard.updateScoreboard(p);
+		}
 	}
 	
 	public static void teleport() {
@@ -84,8 +101,21 @@ public class Start {
 		Bukkit.broadcastMessage("1...");
 		TimeUnit.SECONDS.sleep(1);
 		Bukkit.broadcastMessage("Start!");
-		started = true;
+		start();
 	}
+	
+	public static void checkForWin() throws InterruptedException {
+    	if (alive.size() == 1) {
+	    	// Prints name of last player alive
+    		for (Player p : Bukkit.getOnlinePlayers()) {
+    			p.sendTitle(ChatColor.YELLOW + Start.alive.get(0).getName(), ChatColor.YELLOW + "won the game", 20, 50, 20);
+    			p.sendMessage(ChatColor.AQUA + Start.alive.get(0).getName() + " won the game!");
+    			p.setGameMode(GameMode.ADVENTURE);
+    			p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE, 10, 1);
+    		}
+	    	Start.started = false;
+			TimeUnit.SECONDS.sleep(1);
+	    	Reset.returnTp();
+		}
+    }
 }
-
-

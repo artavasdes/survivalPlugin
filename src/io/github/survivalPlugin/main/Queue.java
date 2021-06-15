@@ -9,11 +9,11 @@ import org.bukkit.event.Listener;
 
 import test.Start;
 
-public class Queue implements Listener {
+public class Queue {
 	static ArrayList<Player> list = new ArrayList<Player>();
 	
-	public void glassCage(Player p) {
-		Location loc = new Location(p.getWorld(), 40, 70, 0); // TODO; insert coords to glass cage
+	public static void glassCage(Player p) {
+		Location loc = new Location(p.getWorld(), 40, 70, 0);
 		list.add(p);
 		p.teleport(loc);
 	}

@@ -1,44 +1,44 @@
 package io.github.survivalPlugin.main;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.WorldBorder;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 //Creates a moving border with a runnable
 public class Border {
-    private int counter=100;
 
-    public Border(int counter) {
-        if (counter <= 0) {
-            throw new IllegalArgumentException("counter must be greater than 0");
-        } else {
-            this.counter = counter;
-        }
+	private static World world = Bukkit.getWorld("world");
+	private static WorldBorder b = world.getWorldBorder();
+	private static int counter;
+	public static int radius; // sets radius of world
+	public static int reducer; // units border goes down by
+
+public Border(int counter, int radius, int reducer) {
+    if (counter <= 0) {
+        throw new IllegalArgumentException("counter must be greater than 0");
+    } else {
+  	  Border.counter = counter;
+        Border.radius = radius;
+        Border.reducer = reducer;
     }
+}
 
-    World world = Bukkit.getWorld("world");
-    WorldBorder border = world.getWorldBorder();
-    //sets radius of world
-    public int radius = 300;
-    //units border goes down by
-    public int reducer = 0;
-    
-    public static void shrinkBorder(Border border) {
-    	new BukkitRunnable() {
+public static void shrinkBorder(Border border) {
+	new BukkitRunnable() {
 		    @Override
 		    public void run() {    
 		        if (counter > 0) { 
-		        	border.setSize(radius-reducer);
-		        	border.setCenter(0,0);
-		        	reducer=reducer+2;
+		        	radius -= reducer;
+		        	b.setSize(radius);
+		        	b.setCenter(new Location(Bukkit.getWorld("world"), 0, 0, 0));
 		        } else {
 		            //set world border
-		        	border.setSize(100);
-		            this.cancel();
+		        	b.setSize(100);
+		            cancel();
 		        }
 		    }
-    	}.runTaskTimer(Main.instance, 0L, 20L);
-    }
+	}.runTaskTimer(Main.instance, 0L, 20L);
+}
 }

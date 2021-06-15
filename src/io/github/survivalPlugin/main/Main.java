@@ -20,6 +20,7 @@ public class Main extends JavaPlugin {
 		//register events
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(new JoinEvents(), this);
+		pm.registerEvents(new Death(), this);
 	}
 	
 	@Override
@@ -39,9 +40,8 @@ public class Main extends JavaPlugin {
 				if(player.hasPermission("reset.use")) {
 					player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD+"Resetting Minigame!");	
 					//reset minigame
-					Reset.returnTp(player);
-					ChestLoot.reset();
-					//ChestLoot.add();
+					Reset.returnTp();
+					ChestLoot.remove();
 					return true;
 				}
 				player.sendMessage(ChatColor.RED + "You do not have permission to use this command, contact a server mod!");
@@ -58,16 +58,12 @@ public class Main extends JavaPlugin {
 				Player player = (Player) sender;
 					player.sendMessage(ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "Starting Game Soon!");
 					//start game
-					Start.teleport(player);
 					try {
 						Start.countdown();
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					//TODO, add method for starting game
-					ChestLoot.reset();
-					ChestLoot.add();
 					return true;
 			}
 			else {

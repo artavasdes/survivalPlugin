@@ -13,7 +13,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class ChestLoot {
 	//removes loot from chest
-	public void remove(){
+	public static void remove(){
 		World world = Bukkit.getWorld("world");
 		for (Chunk c : world.getLoadedChunks()) {
 
@@ -31,7 +31,7 @@ public class ChestLoot {
 	}
 		
 	//adds random loot to chest
-	public void add() {
+	public static void add() {
 		World world = Bukkit.getWorld("world");
 		for (Chunk c : world.getLoadedChunks()) {
 
@@ -40,19 +40,19 @@ public class ChestLoot {
                 if (b instanceof Chest) {
                     Chest chest = (Chest) b;
                     Inventory inventory = chest.getBlockInventory();
-                    Material[] randomItens = {Material.AIR, Material.APPLE, Material.STICK, 
+                    Material[] randomItems = {Material.AIR, Material.APPLE, Material.STICK, 
                     		Material.STONE_SWORD, Material.WOODEN_SWORD, Material.STONE_AXE, Material.DIAMOND_PICKAXE, 
                     		Material.ARROW, Material.BOW };
                    
 
-                    for (int i = 0; i < 7; i++) {
+                    for (int i = 0; i < randomItems.length; i++) {
                         Random rand = new Random();
                         //int intRandom1 = rand.nextInt(35) + 9;
                         //int intItens = rand.nextInt(randomItens.length);
 
                         int max = 9;
-                        for (int amountOfItems = 0; amountOfItems < max; amountOfItems++) {
-                            inventory.addItem(new ItemStack(randomItens[rand.nextInt(randomItens.length)]));
+                        for (int amount = 0; amount < max; amount++) {
+                            inventory.addItem(new ItemStack(randomItems[rand.nextInt(randomItems.length)]));
                         }
                     }
                 }
@@ -60,5 +60,3 @@ public class ChestLoot {
 		}
 	}
 }
-
-

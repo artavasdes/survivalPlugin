@@ -16,15 +16,10 @@ import org.bukkit.entity.Player;
 
 public class Reset {
 	
-	public static void original(Player player) {
-		//reset player hp, removes blocks, etc.
-		player.setHealth(20);
-	}
-	
-	public static void returnTp(Player player) {
+	public static void returnTp() {
 		//returns players back to glass platform
 		ArrayList<Location> locations = new ArrayList<Location>();
-		World world = player.getWorld();
+		World world = Bukkit.getWorld("world");
 		Location l = new Location(world,10,100,10);
 		locations.add(l);
 		Location l2 = new Location(world,15,100,10);
@@ -38,6 +33,7 @@ public class Reset {
 		int i = 0;
 		for(Player p : Bukkit.getOnlinePlayers()) {
 			p.teleport(locations.get(i));
+			p.setHealth(20);
 			i++;
 		}
 	}
