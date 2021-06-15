@@ -46,6 +46,6 @@ public static void shrinkBorder(Border border) {
 }
 
 public static void borderReset(int radius) {
-	Border.radius = 250;
+	Border.radius = 800;
 }
 }
