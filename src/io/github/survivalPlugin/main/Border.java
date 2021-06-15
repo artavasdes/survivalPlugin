@@ -44,4 +44,8 @@ public static void shrinkBorder(Border border) {
 		    }
 	}.runTaskTimer(Main.instance, 0L, 20L);
 }
+
+public static void borderReset(int radius) {
+	Border.radius = 250;
+}
 }

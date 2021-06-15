@@ -42,6 +42,7 @@ public class Main extends JavaPlugin {
 					//reset minigame
 					Reset.returnTp();
 					ChestLoot.remove();
+					Border.borderReset(250);
 					return true;
 				}
 				player.sendMessage(ChatColor.RED + "You do not have permission to use this command, contact a server mod!");
