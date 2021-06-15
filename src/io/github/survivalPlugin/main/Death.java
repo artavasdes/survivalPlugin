@@ -12,6 +12,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import test.GameScoreboard;
+import test.Start;
 
 public class Death implements Listener {
 	// list of alive players
@@ -27,7 +28,8 @@ public class Death implements Listener {
 	            	p.setGameMode(GameMode.SPECTATOR);
 	            	for (Player player : Bukkit.getOnlinePlayers()) {
 	        			GameScoreboard.updateScoreboard(player);
-	            		player.sendMessage(ChatColor.YELLOW + p.getName() + ChatColor.RED + " has been hit by TNT!");
+	            		player.sendMessage(ChatColor.YELLOW + p.getName() + ChatColor.RED + " died because of " 
+	            				+ ChatColor.GOLD + e.getCause().toString());
 	            	}
 	            	p.teleport(new Location(p.getWorld(), 10, 50, 10));
 	            	Start.checkForWin();
