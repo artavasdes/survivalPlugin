@@ -21,21 +21,23 @@ public class Border {
     World world = Bukkit.getWorld("world");
     WorldBorder border = world.getWorldBorder();
     //sets radius of world
-    public int radius = 300;
+    public int radius = 250;
     //units border goes down by
-    public int reducer = 0;
+    //public int reducer = 0;
     
     public static void shrinkBorder(Border border) {
     	new BukkitRunnable() {
 		    @Override
 		    public void run() {    
-		        if (counter > 0) { 
-		        	border.setSize(radius-reducer);
+		        if (counter > 0) {
 		        	border.setCenter(0,0);
-		        	reducer=reducer+2;
+		        	radius =-2;
+		        	border.setSize(radius);
+		        	
+		        	//reducer=reducer+2;
 		        } else {
 		            //set world border
-		        	border.setSize(100);
+		        	border.setSize(50);
 		            this.cancel();
 		        }
 		    }
