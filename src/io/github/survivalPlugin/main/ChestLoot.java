@@ -55,7 +55,7 @@ public class ChestLoot {
                     
                     for (int i = 0; i < chest.getInventory().getSize(); i++) {
                     	if (rand.nextInt(100) <= 20)
-                    		inventory.setItem(1, new ItemStack(randomItems[rand.nextInt(randomItems.length)]));
+                    		inventory.setItem(i, new ItemStack(randomItems[rand.nextInt(randomItems.length)]));
                     }
                 }
             }

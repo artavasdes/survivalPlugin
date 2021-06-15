@@ -1,50 +1,6 @@
 package io.github.survivalPlugin.main;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
-
-import org.bukkit.entity.Player;
-
-import test.Border;
-import test.ChestLoot;
-import test.GameScoreboard;
-import test.Reset;
-import test.Start;
-
-import org.bukkit.Material;
-import org.bukkit.Sound;
-import org.bukkit.World;
-import org.bukkit.entity.FallingBlock;
-
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.World;
-import org.bukkit.entity.Player;
-
-public class Start {
-	// map boundaries TODO
-	static int x1 = 0;
-	static int x2 = 0;
-	static int z1 = 0;
-	static int z2 = 0;
-	static int y = 0;
-	static boolean started = false;
-	public static ArrayList<Player> alive = new ArrayList<Player>();
-	
-	public static void start() {
-		alive.clear();
-		started = true;
-		teleport();
-		Border border = new Border(100, 300, 2);
-		Border.shrinkBorder(border);
+(border);
 		ChestLoot.add();
 		for (Player p : Bukkit.getOnlinePlayers()) {
 			alive.add(p);
@@ -115,6 +71,7 @@ public class Start {
     		}
 	    	Start.started = false;
 			TimeUnit.SECONDS.sleep(1);
+			Border.borderReset();
 	    	Reset.returnTp();
 		}
     }

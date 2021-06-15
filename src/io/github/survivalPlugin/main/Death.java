@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import test.GameScoreboard;
@@ -28,8 +29,9 @@ public class Death implements Listener {
 	            	p.setGameMode(GameMode.SPECTATOR);
 	            	for (Player player : Bukkit.getOnlinePlayers()) {
 	        			GameScoreboard.updateScoreboard(player);
-	            		player.sendMessage(ChatColor.YELLOW + p.getName() + ChatColor.RED + " died because of " 
-	            				+ ChatColor.GOLD + e.getCause().toString());
+	        			if (e.getCause().equals(DamageCause.ENTITY_ATTACK) || e.getCause().equals(DamageCause.ENTITY_SWEEP_ATTACK)) {
+	            		player.sendMessage(ChatColor.YELLOW + p.getName() + ChatColor.RED + " died! " + Start.alive.size() + " remain.");
+	        			}
 	            	}
 	            	p.teleport(new Location(p.getWorld(), 10, 50, 10));
 	            	Start.checkForWin();
