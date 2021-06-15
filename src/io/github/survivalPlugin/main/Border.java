@@ -6,6 +6,9 @@ import org.bukkit.World;
 import org.bukkit.WorldBorder;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import test.Border;
+import test.Main;
+
 //Creates a moving border with a runnable
 public class Border {
 
@@ -35,7 +38,7 @@ public static void shrinkBorder(Border border) {
 		        	b.setCenter(new Location(Bukkit.getWorld("world"), 0, 0, 0));
 		        } else {
 		            //set world border
-		        	b.setSize(100);
+		        	b.setSize(50);
 		            cancel();
 		        }
 		    }
