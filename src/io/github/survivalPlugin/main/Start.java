@@ -30,10 +30,16 @@ public class Start {
 	static boolean started = false;
 	public static ArrayList<Player> alive = new ArrayList<Player>();
 	
-	public static void teleport(Player player) {
+	public void start() {
+		teleport();
+		Border border = new Border(100);
+		Border.shrinkBorder(border);
+	}
+	
+	public static void teleport() {
 		//Teleports players to set locations
 		ArrayList<Location> locations = new ArrayList<Location>();
-		World world = player.getWorld();
+		World world = Bukkit.getWorld("world");
 		Location l = new Location(world,.5,53,-25.5);
 		locations.add(l);
 		Location l2 = new Location(world,.5,53,26.5);
@@ -80,5 +86,6 @@ public class Start {
 		Bukkit.broadcastMessage("Start!");
 		started = true;
 	}
+}
 
 

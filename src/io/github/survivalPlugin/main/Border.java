@@ -8,13 +8,9 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 //Creates a moving border with a runnable
 public class Border {
-
-	private final JavaPlugin plugin;
-    
     private int counter=100;
 
-    public Border(JavaPlugin plugin, int counter) {
-        this.plugin = plugin;
+    public Border(int counter) {
         if (counter <= 0) {
             throw new IllegalArgumentException("counter must be greater than 0");
         } else {
@@ -29,7 +25,7 @@ public class Border {
     //units border goes down by
     public int reducer = 0;
     
-    public void shrinkBorder() {
+    public static void shrinkBorder(Border border) {
     	new BukkitRunnable() {
 		    @Override
 		    public void run() {    
