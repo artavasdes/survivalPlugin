@@ -21,10 +21,12 @@ public class JoinEvents implements Listener {
 	public void onJoin (PlayerJoinEvent e) {
 		Player p = e.getPlayer();
 		
+		//introducing tnt run
 		p.sendTitle(ChatColor.BOLD + "" + ChatColor.RED + "TNT Run", ChatColor.YELLOW + "Welcome!", 20, 50, 20);
 		p.setHealth(20);
 		p.setLevel(0);
 		
+		//spawns in glass cage
 		World world = p.getWorld();
 		Location loc = new Location(world,5,124,4);
 		Queue.glassCage(p);
@@ -34,6 +36,7 @@ public class JoinEvents implements Listener {
 			GameScoreboard.updateScoreboard(player);
 		}
 		
+		//sets gamemode for player as spectator or player
 		if (Start.started && !Queue.list.contains(p))
 			p.setGameMode(GameMode.SPECTATOR);
 		else
