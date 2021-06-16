@@ -21,7 +21,7 @@ public class Border {
 
 public Border(int counter, int radius, int reducer) {
     if (counter <= 0) {
-        throw new IllegalArgumentException("counter must be greater than 0");
+        throw new IllegalArgumentException("Counter must be greater than 0");
     } else {
   	  Border.counter = counter;
         Border.radius = radius;
