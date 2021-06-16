@@ -21,7 +21,7 @@ public class Border {
 
 public Border(int counter, int radius, int reducer) {
     if (counter <= 0) {
-        throw new IllegalArgumentException("counter must be greater than 0");
+        throw new IllegalArgumentException("Counter must be greater than 0");
     } else {
   	  Border.counter = counter;
         Border.radius = radius;
@@ -44,7 +44,7 @@ public static void shrinkBorder(Border border) {
 		            cancel();
 		        }
 		    }
-	}.runTaskTimer(Main.instance, 0L, 20L);
+	}.runTaskTimer(Main.instance, 0L, 40L);
 }
 
 public static void borderReset() {
