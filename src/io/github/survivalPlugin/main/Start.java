@@ -12,7 +12,7 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 
 public class Start {
-	// map boundaries TODO
+	// map boundaries for survival
 	static int x1 = 0;
 	static int x2 = 0;
 	static int z1 = 0;
@@ -37,6 +37,7 @@ public class Start {
 		}
 	}
 	
+	// Spawns players in start location like the movie hunger games where the contestants spawn in pods.
 	public static void teleport() {
 		//Teleports players to set locations
 		ArrayList<Location> locations = new ArrayList<Location>();
@@ -72,6 +73,8 @@ public class Start {
 		}
 		
 	}
+	
+	//countdown to start game
 	public static void countdown() throws InterruptedException {
 		//5 second countdown until tnt
 		Bukkit.broadcastMessage(ChatColor.GREEN + "Starting in 5...");
