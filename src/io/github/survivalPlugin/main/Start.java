@@ -92,8 +92,8 @@ public class Start {
     	if (alive.size() == 1) {
 	    	// Prints name of last player alive
     		for (Player p : Bukkit.getOnlinePlayers()) {
-    			p.sendTitle(ChatColor.YELLOW + Start.alive.get(0).getName(), ChatColor.YELLOW + "won the game", 20, 50, 20);
-    			p.sendMessage(ChatColor.AQUA + Start.alive.get(0).getName() + " won the game!");
+    			p.sendTitle(ChatColor.YELLOW + Start.alive.get(0).getName(), ChatColor.YELLOW + " has won the game", 20, 50, 20);
+    			p.sendMessage(ChatColor.AQUA + Start.alive.get(0).getName() + " has won the game!");
     			p.setGameMode(GameMode.ADVENTURE);
     			p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE, 10, 1);
     		}
