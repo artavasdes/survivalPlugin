@@ -44,7 +44,7 @@ public static void shrinkBorder(Border border) {
 		            cancel();
 		        }
 		    }
-	}.runTaskTimer(Main.instance, 0L, 20L);
+	}.runTaskTimer(Main.instance, 0L, 40L);
 }
 
 public static void borderReset() {
