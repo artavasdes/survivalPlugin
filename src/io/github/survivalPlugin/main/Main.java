@@ -69,7 +69,7 @@ public class Main extends JavaPlugin {
 			}
 			else {
 				//reset command for server
-				sender.sendMessage("Starting Game");
+				sender.sendMessage("Starting Game!");
 				return true;
 			}
 		}
