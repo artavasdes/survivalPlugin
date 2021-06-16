@@ -96,6 +96,7 @@ public class Start {
     			p.sendMessage(ChatColor.AQUA + Start.alive.get(0).getName() + " has won the game!");
     			p.setGameMode(GameMode.ADVENTURE);
     			p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_TWINKLE, 10, 1);
+    			//fix
     		}
 	    	Start.started = false;
 			TimeUnit.SECONDS.sleep(1);
